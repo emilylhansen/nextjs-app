@@ -9,9 +9,9 @@ const RecentActivityItem = ({ value }: RecentActivityItemProps) => {
     <li className="flex pb-4">
       <Avatar
         alt="PP"
-        src=""
+        src="/"
         variant="square"
-        className="rounded-lg border-solid border-2 border-slate-200 mr-2"
+        className="rounded-lg border-solid border-1 border-slate-200 mr-2 bg-white"
       />
       <div className="flex flex-1 justify-between">
         <div className="align-center flex flex-col">

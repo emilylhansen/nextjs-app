@@ -1,20 +1,6 @@
-import React from "react";
-import Transaction from "@/components/RecentActivityItem";
-import prisma from "@/db";
-import { link } from "fs";
-import Paper from "@mui/material/Paper";
-import { Navigation } from "@/components/Navigation";
-import { Topbar } from "@/components/Topbar";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import StraightOutlinedIcon from "@mui/icons-material/StraightOutlined";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Chip from "@mui/material/Chip";
-import { Sidebar } from "@/components/Sidebar";
-import { AxisOptions, Chart } from "react-charts";
-import { Header } from "@/components/Header";
+import Paper from "@mui/material/Paper";
 
 export const Balance = () => {
   return (
@@ -27,8 +13,8 @@ export const Balance = () => {
       <Chip
         label="3.27%"
         color="success"
-        icon={<StraightOutlinedIcon />}
-        className="rounded-md"
+        icon={<ArrowUpwardIcon className="text-sm" />}
+        className="rounded-md font-bold text-green-400 bg-green-100"
       />
     </Paper>
   );

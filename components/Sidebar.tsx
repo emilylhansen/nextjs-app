@@ -26,11 +26,16 @@ export const Sidebar = async () => {
   const transactions = await getTransactions();
 
   return (
-    <Paper className="h-full px-8 py-8 overflow-hidden flex flex-col">
-      <div className="flex justify-between items-center mb-4">
-        <Badge badgeContent={4} color="primary">
-          <NotificationsNoneOutlinedIcon color="action" />
-        </Badge>
+    <Paper className="h-full px-8 py-8 overflow-hidden flex flex-col bg-white/[0.5]">
+      <div className="flex justify-between items-center mb-8">
+        <IconButton
+          aria-label={""}
+          className="border-solid border-2 border-slate-200"
+        >
+          <Badge badgeContent={20} color="primary">
+            <NotificationsNoneOutlinedIcon color="action" />
+          </Badge>
+        </IconButton>
         <Avatar alt="Person 1" src="/assets/person_1.png" />
       </div>
 

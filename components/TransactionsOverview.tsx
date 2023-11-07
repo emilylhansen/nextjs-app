@@ -5,12 +5,24 @@ import { BarChart } from "@mui/x-charts/BarChart";
 
 export const TransactionsOverview = () => {
   return (
-    <Paper className="h-full rounded-3xl">
+    <Paper className="h-full rounded-3xl p-6">
+      <span className="bold font-bold">Transactions Overview</span>
+
       <BarChart
-        xAxis={[{ scaleType: "band", data: ["group A", "group B", "group C"] }]}
-        series={[{ data: [4, 3, 5] }, { data: [1, 6, 3] }, { data: [2, 5, 6] }]}
-        width={500}
-        height={300}
+        sx={{
+          ".MuiChartsAxis-root .MuiChartsAxis-tickLabel": {
+            fontWeight: "bold",
+          },
+          ".MuiChartsLegend-series text": {
+            fontWeight: "bold !important",
+            fontSize: "0.8rem !important",
+          },
+        }}
+        xAxis={[{ scaleType: "band", data: ["21 Oct", "22 Oct"] }]}
+        series={[
+          { data: [4, 3], color: "#FF8BB9", label: "Savings" },
+          { data: [1, 6], color: "#6F82FF", label: "Expenses" },
+        ]}
       />
     </Paper>
   );

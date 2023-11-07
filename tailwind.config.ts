@@ -10,9 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "pastel-purple": "#F9F0FE",
-        "pastel-blue": "#ECEFFF",
-        blue: "#5046EF",
+        "purple-100": "#F9F0FE",
+        "purple-400": "#B956D0",
+        "purple-500": "#9C39D9",
+        "blue-100": "#ECEFFF",
+        "blue-400": "#6F82FF",
+        "blue-500": "#5046EF",
+        "pink-300": "#FEAFD0",
+        "pink-400": "#FF8BB9",
+        "pink-500": "#C75E7B",
+        "green-100": "#E6F8F0",
+        "green-400": "#18C378",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
