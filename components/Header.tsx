@@ -8,9 +8,9 @@ import * as A from "fp-ts/lib/Array";
 import * as NEA from "fp-ts/lib/NonEmptyArray";
 
 export const Header = () => {
-  const ds = pipe(
-    A.range(1, 10),
-    A.reduce([new Date()], (dates, _) => {
+  const dates = pipe(
+    NEA.range(1, 10),
+    NEA.reduce([new Date()], (dates, _) => {
       const prevDate = new Date(dates[dates.length - 1]);
       prevDate.setDate(prevDate.getDate() + 1);
       return [...dates, prevDate];
@@ -31,10 +31,10 @@ export const Header = () => {
             label="showing-for"
           >
             {pipe(
-              ds,
-              A.mapWithIndex((i, d) => (
-                <MenuItem key={i} value={d}>
-                  {d}
+              dates,
+              A.mapWithIndex((i, date) => (
+                <MenuItem key={i} value={date}>
+                  {date}
                 </MenuItem>
               ))
             )}

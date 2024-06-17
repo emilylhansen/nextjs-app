@@ -7,11 +7,29 @@ export const SendMoney = () => {
   return (
     <React.Fragment>
       <div className="col-span-7 row-span-6 col-start-3 row-start-3  pb-4 px-6">
-        <Paper className="h-full rounded-3xl p-6 flex flex-col">
-          <TextField id="outlined-basic" label="To" variant="outlined" />
-          <TextField id="outlined-basic" label="For" variant="outlined" />
-          <TextField id="outlined-basic" label="Amount" variant="outlined" />
-          <Button variant="contained">Pay</Button>
+        <Paper className="h-full rounded-3xl p-6 flex flex-col [&>*]:pb-4">
+          <TextField
+            id="outlined-basic"
+            label="To"
+            variant="outlined"
+            placeholder="Name, username, phone, email"
+          />
+          <TextField
+            id="outlined-basic"
+            label="For"
+            variant="outlined"
+            placeholder="Add a note"
+          />
+          <TextField
+            id="outlined-basic"
+            label="Amount"
+            variant="outlined"
+            type="number"
+            placeholder="$ USD"
+          />
+          <Button variant="contained" color="primary" sx={{ maxWidth: 120 }}>
+            Pay
+          </Button>
         </Paper>
       </div>
     </React.Fragment>
