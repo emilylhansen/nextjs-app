@@ -1,10 +1,11 @@
-import navigationSlice from "@/features/navigation/navigationSlice";
+import navigationSlice from "@/lib/features/navigation/navigationSlice";
+import transactionsSlice from "@/lib/features/transactions/transactionsSlice";
 import { configureStore } from "@reduxjs/toolkit";
-// ...
 
 export const store = configureStore({
   reducer: {
     navigation: navigationSlice,
+    transactions: transactionsSlice,
   },
 });
 

@@ -5,7 +5,7 @@ import {
   NavigationItemTitle,
   selectActivePage,
   set,
-} from "@/features/navigation/navigationSlice";
+} from "@/lib/features/navigation/navigationSlice";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined";
 import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";

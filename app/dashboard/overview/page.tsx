@@ -3,7 +3,7 @@ import { Expenses } from "@/components/Expenses";
 import { TransactionsOverview } from "@/components/TransactionsOverview";
 import React from "react";
 
-export const Overview = () => {
+const page = () => {
   return (
     <React.Fragment>
       <div className="col-span-3 row-span-3 col-start-3 row-start-3 pl-6">
@@ -18,3 +18,5 @@ export const Overview = () => {
     </React.Fragment>
   );
 };
+
+export default page;
