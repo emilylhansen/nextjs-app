@@ -1,3 +1,4 @@
+"use client";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -32,12 +33,11 @@ export const TopNavigation = ({
 
             return (
               <Link
-                key={"route"}
+                key={route}
                 href={route}
                 className="flex-1 px-0.5 first:pl-0 last:pr-0 h-full"
               >
                 <ListItemButton
-                  key={route}
                   className={`group flex flex-col h-full rounded-3xl justify-center items-center hover:bg-blue-400/[0.1] ${
                     isActive ? "bg-blue-400/[0.1]" : " bg-transparent"
                   }`}
