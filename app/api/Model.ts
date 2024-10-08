@@ -37,46 +37,48 @@ export const UserS = Schema.Struct({
 
 export type UserS = Schema.Schema.Type<typeof UserS>;
 
+export const isUserS = Schema.is(UserS);
+
 export interface User {
-  readonly _tag: "User";
-  readonly id: 1;
-  readonly name: string;
-  readonly username: string;
-  readonly email: string;
-  readonly address: {
-    readonly street: string;
-    readonly suite: string;
-    readonly city: string;
-    readonly zipcode: string;
-    readonly geo: {
-      readonly lat: string;
-      readonly lng: string;
+  _tag: "User";
+  id: 1;
+  name: string;
+  username: string;
+  email: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {
+      lat: string;
+      lng: string;
     };
   };
-  readonly phone: string;
-  readonly website: string;
-  readonly company: {
-    readonly name: string;
-    readonly catchPhrase: string;
-    readonly bs: string;
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
   };
 }
 
 export class GetUsersError {
-  readonly _tag = "GetUsersError";
+  _tag = "GetUsersError";
 }
 
 export class GetUserByIdError {
-  readonly _tag = "GetUserByIdError";
+  _tag = "GetUserByIdError";
 }
 
 export interface Todo {
-  readonly _tag: "Todo";
-  readonly userId: number;
-  readonly id: number;
-  readonly title: string;
-  readonly completed: boolean;
+  _tag: "Todo";
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
 }
 export class GetTodosError {
-  readonly _tag = "GetTodosError";
+  _tag = "GetTodosError";
 }

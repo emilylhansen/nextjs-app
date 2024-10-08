@@ -24,14 +24,9 @@ const layout = ({ children }: { children: React.ReactNode }) => {
                 icon: <AutoAwesomeMosaicOutlinedIcon />,
               },
               {
-                route: "/dashboard/send-money",
-                title: "Send Money",
+                route: "/dashboard/send-request-money",
+                title: "Send & Request Money",
                 icon: <ArrowCircleRightOutlinedIcon />,
-              },
-              {
-                route: "/dashboard/request-money",
-                title: "Request Money",
-                icon: <ArrowCircleLeftOutlinedIcon />,
               },
               {
                 route: "/dashboard/statements",

@@ -17,6 +17,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { UserS } from "@/app/api/Model";
 // import { User } from "@prisma/client";
 
 const style = {
@@ -31,7 +32,7 @@ const style = {
   p: 4,
 };
 
-export const Receivers = ({ users }: { users: Array<{}> }) => {
+export const Receivers = ({ users }: { users: Array<UserS> }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -50,7 +51,7 @@ export const Receivers = ({ users }: { users: Array<{}> }) => {
         >
           <AddOutlinedIcon />
         </IconButton>
-        <Avatar alt="Person 1" src="/assets/person_2.png" />
+        <Avatar alt="Person 1" src="/assets/person_2.png" title={"person 1"} />
         <Avatar alt="Person 1" src="/assets/person_3.png" />
         <Avatar alt="Person 1" src="/assets/person_4.png" />
         <Avatar alt="Person 1" src="/assets/person_5.png" />

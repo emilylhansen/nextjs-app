@@ -3,65 +3,72 @@ import { Balance } from "@/components/Balance";
 import { Expenses } from "@/components/Expenses";
 import { TransactionsOverview } from "@/components/TransactionsOverview";
 import React from "react";
-import { Effect, Schedule, pipe, Array } from "effect";
+import { Effect, Schedule, pipe, Array, Option } from "effect";
 import * as API from "@/app/api/API";
 // import * as Queries from "@/app/api/Queries";
 import { Schema } from "@effect/schema";
 import * as Model from "@/app/api/Model";
+import { HttpClient } from "@effect/platform";
+import {
+  fetchUsersById,
+  selectUsersById,
+} from "@/lib/features/usersById/usersByIdSlice";
+import { ErrorBoundary } from "react-error-boundary";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
-// const retryPolicy = Schedule.exponential(1000).pipe(
-//   Schedule.compose(Schedule.recurs(3))
-// );
-
-const a = async () =>
-  await pipe(
-    API.getTodos,
-    // Effect.timeout("1 second"),
-    // Effect.retry(retryPolicy),
-    // Effect.tap((res) => console.log(pipe(res, Array.takeRight(3)))),
-    Effect.runPromise
-  );
-const b = async () =>
-  await pipe(
-    [1, 2, 300],
-    Effect.forEach((id) => API.getUserById(id)),
-    Effect.tap((res) => console.log(pipe(res, Array.takeRight(3)))),
-    // Effect.timeout("1 second"),
-    // Effect.retry(retryPolicy),
-    Effect.flatMap(
-      Schema.decodeUnknown(Schema.Array(Model.UserS), {
-        onExcessProperty: "error",
-        errors: "all",
-        exact: true,
-      })
-    ),
-    // Effect.withSpan("getUserById", { attributes: {} }),
-    // Effect.catchTags({
-    // ParseError: (_parseError) => Effect.succeed(`Recovering from ParseError`),
-    // BarError: (_barError) => Effect.succeed(`Recovering from BarError`),
-    // }),
-    // Effect.catchAll((error) => Effect.succeed(`Recovering from ${error._tag}`)),
-    Effect.runPromise
-  );
-const page = () => {
-  console.log({ b: b() });
-  // console.log({ a: pipe(a, Array.takeRight(3)), b });
-
-  // throw new Error("error in overview page");
+function fallbackRender({
+  error,
+  resetErrorBoundary,
+}: {
+  error: Error;
+  resetErrorBoundary: () => void;
+}) {
+  // Call resetErrorBoundary() to reset the error boundary and retry the render.
 
   return (
-    <React.Fragment>
-      <div className="col-span-3 row-span-3 col-start-3 row-start-3 pl-6">
-        <Balance />
-      </div>
-      <div className="col-span-4 row-span-3 col-start-6 row-start-3 pr-6">
-        <Expenses />
-      </div>
-      <div className="col-span-7 row-span-3 col-start-3 row-start-6 pb-4 px-6">
-        <TransactionsOverview />
-      </div>
-    </React.Fragment>
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{ color: "red" }}>{error.message}</pre>
+    </div>
+  );
+}
+
+const a = async () => {
+  console.log("start");
+  await new Promise((res) => setTimeout(res, 10000));
+  console.log("end");
+};
+const Page = () => {
+  const dispatch = useAppDispatch();
+  const usersById = useAppSelector(selectUsersById);
+
+  React.useEffect(() => {
+    dispatch(fetchUsersById(10));
+  }, [dispatch]);
+  a();
+
+  // const a = pipe(usersById, Either.map);
+
+  return (
+    <ErrorBoundary
+      fallbackRender={fallbackRender}
+      onReset={(details) => {
+        // Reset the state of your app so the error doesn't happen again
+      }}
+    >
+      <React.Fragment>
+        <div className="col-span-3 row-span-3 col-start-3 row-start-3 pl-6">
+          <Balance />
+        </div>
+        <div className="col-span-4 row-span-3 col-start-6 row-start-3 pr-6">
+          <Expenses />
+        </div>
+        <div className="col-span-7 row-span-3 col-start-3 row-start-6 pb-4 px-6">
+          <TransactionsOverview />
+        </div>
+      </React.Fragment>
+    </ErrorBoundary>
   );
 };
 
-export default page;
+export default Page;
