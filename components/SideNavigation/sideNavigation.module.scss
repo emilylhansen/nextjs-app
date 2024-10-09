@@ -1,0 +1,56 @@
+@use "../../styles/variables";
+
+.paper {
+  height: 100%;
+  padding: 6px 0 !important;
+  color: variables.$gray-800;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    color: variables.$black;
+
+    div {
+      margin-right: 12px;
+      color: variables.$primary-color;
+    }
+  }
+}
+
+.list {
+  width: 100%;
+  max-width: 360px;
+  font-size: variables.$font-size-sm;
+  font-weight: variables.$font-weight-semibold;
+  display: flex;
+  flex-direction: column;
+}
+
+%list-item-active {
+  background: rgba(variables.$primary-color, 0.1);
+  border-right: 4px solid variables.$primary-color;
+  color: variables.$black;
+
+  .themeIcon {
+    color: variables.$primary-color;
+  }
+}
+
+.listItem {
+  padding: 16px;
+  display: block;
+}
+
+.listItem:hover {
+  @extend %list-item-active;
+}
+
+.listItemActive {
+  @extend %list-item-active;
+}
+
+.themeIcon {
+  background: unset;
+  color: variables.$gray-800;
+}

@@ -3,6 +3,65 @@ import { Provider } from "react-redux";
 import { store } from "../lib/store";
 import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
+import "@mantine/core/styles.css";
+import {
+  createTheme as createTheme_,
+  MantineProvider as MantineProvider_,
+} from "@mantine/core";
+
+const theme_ = createTheme_({
+  primaryColor: "primary",
+  colors: {
+    primary: [
+      "#e8edff",
+      "#ced6ff",
+      "#9ba9ff",
+      "#6479ff",
+      "#3750fe",
+      "#1b37fe",
+      "#092aff",
+      "#001de4",
+      "#0019cc",
+      "#0014b4",
+    ],
+    success: [
+      "#e5fff4",
+      "#d2fbe9",
+      "#a6f4d2",
+      "#77eeba",
+      "#51e8a5",
+      "#39e598",
+      "#29e490",
+      "#19ca7c",
+      "#04b46d",
+      "#009c5c",
+    ],
+    pink: [
+      "#ffe8f4",
+      "#ffcfe3",
+      "#ff9cc3",
+      "#fe65a2",
+      "#fd3986",
+      "#fd1f74",
+      "#fe106b",
+      "#e3005a",
+      "#cb004f",
+      "#b20044",
+    ],
+    gray: [
+      "#edf5ff",
+      "#e0e7f1",
+      "#c3ccd8",
+      "#a4afc0",
+      "#8997ab",
+      "#78879f",
+      "#6e809a",
+      "#6e809a",
+      "#50617b",
+      "#41546f",
+    ],
+  },
+});
 
 const theme = createTheme({
   palette: {
@@ -11,14 +70,14 @@ const theme = createTheme({
   },
   components: {
     // Name of the component ⚛️
-    MuiPaper: {
-      styleOverrides: {
-        elevation: {
-          boxShadow:
-            "0px 2px 1px -1px rgba(111,130,255,0.2), 0px 1px 1px 0px rgba(111,130,255,0.14), 0px 1px 3px 0px rgba(111,130,255,0.12)",
-        },
-      },
-    },
+    // MuiPaper: {
+    //   styleOverrides: {
+    //     elevation: {
+    //       boxShadow:
+    //         "0px 2px 1px -1px rgba(111,130,255,0.2), 0px 1px 1px 0px rgba(111,130,255,0.14), 0px 1px 3px 0px rgba(111,130,255,0.12)",
+    //     },
+    //   },
+    // },
     MuiIconButton: {
       styleOverrides: {
         root: {
@@ -47,8 +106,10 @@ const theme = createTheme({
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <Provider store={store}>{children}</Provider>
-    </ThemeProvider>
+    <MantineProvider_ theme={theme_}>
+      <ThemeProvider theme={theme}>
+        <Provider store={store}>{children}</Provider>
+      </ThemeProvider>
+    </MantineProvider_>
   );
 };

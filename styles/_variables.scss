@@ -1,0 +1,88 @@
+// Grayscale
+$white: #fff;
+$gray-100: #edf5ff;
+$gray-200: #e0e7f1;
+$gray-300: #c3ccd8;
+$gray-400: #a4afc0;
+$gray-500: #8997ab;
+$gray-600: #78879f;
+$gray-700: #6e809a;
+$gray-800: #6e809a;
+$gray-900: #50617b;
+$black: #000;
+
+// Branding
+// Primary
+$primary-color: #6f82ff;
+$primary-color-light: #ced6ff;
+$primary-color-dark: #3750fe;
+
+// Secondary
+$secondary-color: #ff9cc3;
+$secondary-color-light: #ffcfe3;
+$secondary-color-dark: #fe65a2;
+
+// Info
+$info-color: #18c378;
+$info-color-light: #e6f8f0;
+$info-color-dark: #009c5c;
+
+// Success
+$success-color: #18c378;
+$success-color-light: #e6f8f0;
+$success-color-dark: #009c5c;
+
+// Warning
+$warning-color: #18c378;
+$warning-color-light: #e6f8f0;
+$warning-color-dark: #009c5c;
+
+// Gradient
+$gradient-primary: linear-gradient(
+  to bottom,
+  var($primary-color, $secondary-color)
+);
+$gradient-primary-light: linear-gradient(
+  to bottom,
+  var($primary-color-light, $secondary-color-light)
+);
+$gradient-primary-dark: linear-gradient(
+  to bottom,
+  var($primary-color-dark, $secondary-color-dark)
+);
+
+// Font Families
+$font-sans: "Inter", sans-serif;
+$font-serif: "Georgia", serif;
+$font-mono: "Menlo", monospace;
+
+// Font Sizes
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem; // 36px
+$font-size-5xl: 3rem; // 48px
+
+// Font Weights
+$font-weight-thin: 100;
+$font-weight-extralight: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+// Line Heights
+$line-height-normal: 1.5;
+$line-height-heading: 1.2;
+
+// Letter Spacing
+$letter-spacing-tight: -0.015em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.05em;

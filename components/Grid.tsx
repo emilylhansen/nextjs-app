@@ -1,4 +1,4 @@
-import SideNavigation from "@/components/SideNavigation";
+import SideNavigation from "@/components/SideNavigation/SideNavigation";
 import { Sidebar } from "@/components/Sidebar";
 import React from "react";
 
