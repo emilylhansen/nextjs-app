@@ -1,7 +1,8 @@
-import { Paper } from "@mantine/core";
+import { Text } from "@mantine/core";
 import styles from "./card.module.scss";
 import { IconCircleFilled } from "@tabler/icons-react";
 import { pipe, Array } from "effect";
+import Paper from "@/components/Paper/Paper";
 
 export const Card = () => {
   return (
@@ -11,11 +12,13 @@ export const Card = () => {
           <IconCircleFilled className={styles.circle1} />
           <IconCircleFilled className={styles.circle2} />
         </div>
-        <span>Debit</span>
+        <Text size="xs">Debit</Text>
       </div>
       <div className={styles.totalWrapper}>
-        <span>$</span>
-        <span className={styles.total}>6,544</span>
+        <Text size="xs">$</Text>
+        <Text size="4xl" className={styles.total}>
+          6,544
+        </Text>
       </div>
       <div className={styles.numberDateWrapper}>
         <div className={styles.numberWrapper}>
@@ -31,9 +34,9 @@ export const Card = () => {
               ))
             )}
           </div>
-          <span>2341</span>
+          <Text size="xs">2341</Text>
         </div>
-        <span>04/28</span>
+        <Text size="xs">04/28</Text>
       </div>
     </Paper>
   );

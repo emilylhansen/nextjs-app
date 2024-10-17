@@ -1,6 +1,6 @@
 import Paper from "@/components/Paper/Paper";
 import styles from "./Balance.module.scss";
-import { Text, Chip } from "@mantine/core";
+import { Text, Pill } from "@mantine/core";
 import { IconArrowUp } from "@tabler/icons-react";
 
 type Props = { balance: number };
@@ -19,9 +19,10 @@ export const Balance = ({ balance }: Props) => {
           {balance}
         </Text>
       </div>
-      <Chip icon={<IconArrowUp />} color="green" variant="light" defaultChecked>
+      <Pill className={styles.pill}>
+        <IconArrowUp size={12} stroke={3} />
         3.6%
-      </Chip>
+      </Pill>
     </Paper>
   );
 };

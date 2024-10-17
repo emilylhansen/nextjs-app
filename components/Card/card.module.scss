@@ -1,5 +1,4 @@
 @use "../../styles/variables";
-@use "../ListItem/listItem.module.scss";
 
 .paper {
   position: relative;
@@ -11,8 +10,10 @@
   height: 11vw;
   box-sizing: border-box;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  font-weight: variables.$font-weight-bold;
-  font-size: variables.$font-size-xs;
+
+  p {
+    font-weight: variables.$font-weight-bold;
+  }
 }
 
 .topWrapper {
@@ -38,11 +39,10 @@
   margin: auto 0;
   display: flex;
   align-items: start;
-  font-weight: variables.$font-weight-bold;
   color: rgba(variables.$white, 1);
 }
 .total {
-  font-size: variables.$font-size-4xl;
+  line-height: 90%;
 }
 
 .numberDateWrapper {

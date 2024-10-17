@@ -1,5 +1,4 @@
 @use "../../styles/variables";
-@use "../ListItem/listItem.module.scss";
 
 .paper {
   display: flex;
@@ -19,4 +18,19 @@
   font-size: 56px;
   line-height: 90%;
   margin-left: 8px;
+}
+
+.pill {
+  background-color: variables.$success-color-light;
+  color: variables.$success-color;
+  font-weight: variables.$font-weight-semibold;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 4px;
+    }
+  }
 }

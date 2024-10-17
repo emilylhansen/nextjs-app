@@ -1,10 +1,9 @@
 @use "../../styles/variables";
-@use "../ListItem/listItem.module.scss";
+@use "../List/list.module.scss";
 
 .paper {
   height: 100%;
   padding: 6px 0 !important;
-  color: variables.$gray-800;
 
   h3 {
     display: flex;
@@ -20,10 +19,9 @@
 }
 
 .list {
+  @extend %list;
   width: 100%;
   max-width: 360px;
-  font-size: variables.$font-size-sm;
-  font-weight: variables.$font-weight-semibold;
   display: flex;
   flex-direction: column;
 }

@@ -1,0 +1,20 @@
+@use "../../styles/variables";
+
+.topWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.pill {
+  background-color: variables.$primary-color;
+  font-weight: variables.$font-weight-bold;
+  color: variables.$white;
+  margin-left: 8px;
+}

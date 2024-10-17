@@ -1,5 +1,11 @@
 @use "../../styles/variables";
 
+%list {
+  font-size: variables.$font-size-sm;
+  font-weight: variables.$font-weight-semibold;
+  color: variables.$gray-800;
+}
+
 %list-item-active {
   background: rgba(variables.$primary-color, 0.1);
   color: variables.$black;
