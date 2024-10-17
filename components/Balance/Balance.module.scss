@@ -1,0 +1,22 @@
+@use "../../styles/variables";
+@use "../ListItem/listItem.module.scss";
+
+.paper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  margin: 24px 0;
+}
+
+.balance {
+  font-size: 56px;
+  line-height: 90%;
+  margin-left: 8px;
+}

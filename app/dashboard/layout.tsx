@@ -3,10 +3,12 @@ import { Grid } from "@/components/Grid";
 import { Header } from "@/components/Header";
 import { TopNavigation } from "@/components/TopNavigation/TopNavigation";
 import React from "react";
-import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
-import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import AutoAwesomeMosaicOutlinedIcon from "@mui/icons-material/AutoAwesomeMosaicOutlined";
+
+import {
+  IconArrowsDiff,
+  IconFileText,
+  IconLayoutDashboard,
+} from "@tabler/icons-react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -21,17 +23,17 @@ const layout = ({ children }: { children: React.ReactNode }) => {
               {
                 route: "/dashboard/overview",
                 title: "Overview",
-                icon: <AutoAwesomeMosaicOutlinedIcon />,
+                icon: <IconLayoutDashboard />,
               },
               {
-                route: "/dashboard/send-request-money",
-                title: "Send & Request Money",
-                icon: <ArrowCircleRightOutlinedIcon />,
+                route: "/dashboard/send-request-funds",
+                title: "Send & Request Funds",
+                icon: <IconArrowsDiff />,
               },
               {
                 route: "/dashboard/statements",
                 title: "Statements",
-                icon: <ArticleOutlinedIcon />,
+                icon: <IconFileText />,
               },
             ]}
           />

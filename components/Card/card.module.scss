@@ -1,0 +1,67 @@
+@use "../../styles/variables";
+@use "../ListItem/listItem.module.scss";
+
+.paper {
+  position: relative;
+  padding: 1.5rem;
+  color: rgba(variables.$white, 0.8);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 11vw;
+  box-sizing: border-box;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  font-weight: variables.$font-weight-bold;
+  font-size: variables.$font-size-xs;
+}
+
+.topWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circlesWrapper {
+  display: flex;
+}
+
+.circle1 {
+  color: rgba(variables.$white, 0.7);
+}
+
+.circle2 {
+  color: rgba(variables.$white, 0.4);
+  margin-left: -12px;
+}
+
+.totalWrapper {
+  margin: auto 0;
+  display: flex;
+  align-items: start;
+  font-weight: variables.$font-weight-bold;
+  color: rgba(variables.$white, 1);
+}
+.total {
+  font-size: variables.$font-size-4xl;
+}
+
+.numberDateWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numberWrapper {
+  display: flex;
+}
+
+.hiddenNumbersWrapper {
+  margin-right: 2px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hiddenNumber {
+  margin-right: 2px;
+  color: rgba(variables.$white, 1);
+}

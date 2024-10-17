@@ -1,5 +1,5 @@
 "use client";
-import { Card } from "@/components/Card";
+import { Card } from "@/components/Card/Card";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import Box from "@mui/material/Box";
 import Chip from "@mui/material/Chip";

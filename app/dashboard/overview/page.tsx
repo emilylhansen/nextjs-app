@@ -1,5 +1,5 @@
 "use client";
-import { Balance } from "@/components/Balance";
+import { Balance } from "@/components/Balance/Balance";
 import { Expenses } from "@/components/Expenses";
 import { TransactionsOverview } from "@/components/TransactionsOverview";
 import React from "react";
@@ -58,7 +58,7 @@ const Page = () => {
     >
       <React.Fragment>
         <div className="col-span-3 row-span-3 col-start-3 row-start-3 pl-6">
-          <Balance />
+          <Balance balance={10000} />
         </div>
         <div className="col-span-4 row-span-3 col-start-6 row-start-3 pr-6">
           <Expenses />

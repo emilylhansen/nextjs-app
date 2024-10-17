@@ -1,3 +1,4 @@
+import { NavigationItem } from "@/components/SideNavigation/sideNavigation.types";
 import { NavigationItemTitle } from "@/lib/features/navigation/navigationSlice";
 import {
   IconArrowsLeftRight,
@@ -7,11 +8,6 @@ import {
   IconReportAnalytics,
   IconSettings,
 } from "@tabler/icons-react";
-
-type NavigationItem = {
-  title: NavigationItemTitle;
-  icon: React.JSX.Element;
-};
 
 export const NAVIGATION_ITEMS: Array<NavigationItem> = [
   {

@@ -1,0 +1,52 @@
+@use "../../styles/variables";
+@use "../ListItem/listItem.module.scss";
+
+.paper {
+  overflow: hidden;
+  height: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.link {
+  flex: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    @extend %list-item-active;
+  }
+}
+
+%list-item-active {
+  @extend %list-item-active-horizontal;
+  border-radius: calc(2rem * 1);
+
+  &:first-child,
+  &:last-child {
+    margin: 4px;
+  }
+
+  &:not(:first-child):not(:last-child) {
+    margin: 4px 0;
+  }
+}
+
+.linkActive {
+  @extend %list-item-active;
+}
+
+.listItemWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.themeIcon {
+  background: unset;
+  color: variables.$gray-800;
+}

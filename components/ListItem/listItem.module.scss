@@ -1,0 +1,22 @@
+@use "../../styles/variables";
+
+%list-item-active {
+  background: rgba(variables.$primary-color, 0.1);
+  color: variables.$black;
+
+  .themeIcon {
+    color: variables.$primary-color;
+  }
+}
+
+%list-item-active-vertical {
+  @extend %list-item-active;
+
+  border-right: 4px solid variables.$primary-color;
+}
+
+%list-item-active-horizontal {
+  @extend %list-item-active;
+
+  //   border: 4px solid variables.$primary-color;
+}

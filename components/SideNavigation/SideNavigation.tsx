@@ -9,15 +9,23 @@ import {
 } from "@/lib/features/navigation/navigationSlice";
 import { List, ThemeIcon, Title } from "@mantine/core";
 import { IconChartDonut2 } from "@tabler/icons-react";
-import * as A from "fp-ts/Array";
-import { pipe } from "fp-ts/function";
-import _ from "lodash";
 import Link from "next/link";
 import styles from "./sideNavigation.module.scss";
+import { Array, pipe, String } from "effect";
+import { NavigationItem } from "@/components/SideNavigation/sideNavigation.types";
 
 const SideNavigation = () => {
   const activePage = useAppSelector(selectActivePage);
   const dispatch = useAppDispatch();
+
+  const getLinkClassName = (title: NavigationItem["title"]): string =>
+    pipe(
+      [styles.listItem, activePage === title ? styles.listItemActive : ""],
+      Array.join(" ")
+    );
+
+  const getListItemText = (title: NavigationItem["title"]): string =>
+    pipe(title, String.toLowerCase, String.capitalize);
 
   return (
     <Paper className={styles.paper} shadow="xl" radius="xl" p="xl">
@@ -30,14 +38,12 @@ const SideNavigation = () => {
       <List className={styles.list} component="nav">
         {pipe(
           NAVIGATION_ITEMS,
-          A.map((navigationItem) => (
+          Array.map(({ title, icon }) => (
             <Link
-              key={navigationItem.title}
-              href={`/${navigationItem.title.toLocaleLowerCase()}`}
-              className={`${styles.listItem} ${
-                activePage === navigationItem.title ? styles.listItemActive : ""
-              }`}
-              onClick={() => dispatch(set(navigationItem.title))}
+              key={title}
+              href={`/${title.toLocaleLowerCase()}`}
+              className={getLinkClassName(title)}
+              onClick={() => dispatch(set(title))}
             >
               <List.Item
                 icon={
@@ -45,11 +51,11 @@ const SideNavigation = () => {
                     variant="white"
                     classNames={{ root: styles.themeIcon }}
                   >
-                    {navigationItem.icon}
+                    {icon}
                   </ThemeIcon>
                 }
               >
-                {_.capitalize(navigationItem.title)}
+                {getListItemText(title)}
               </List.Item>
             </Link>
           ))
