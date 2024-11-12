@@ -1,0 +1,55 @@
+// Margin Variables
+$margin-xs: 4px;
+$margin-s: 8px;
+$margin-m: 16px;
+$margin-l: 24px;
+$margin-xl: 32px;
+
+// Margin Utility Classes
+.margin-xs {
+  margin: $margin-xs;
+}
+
+.margin-s {
+  margin: $margin-s;
+}
+
+.margin-m {
+  margin: $margin-m;
+}
+
+.margin-l {
+  margin: $margin-l;
+}
+
+.margin-xl {
+  margin: $margin-xl;
+}
+
+// Padding Variables
+$padding-xs: 4px;
+$padding-s: 8px;
+$padding-m: 16px;
+$padding-l: 24px;
+$padding-xl: 32px;
+
+// Padding Utility Classes
+.padding-xs {
+  padding: $padding-xs;
+}
+
+.padding-s {
+  padding: $padding-s;
+}
+
+.padding-m {
+  padding: $padding-m;
+}
+
+.padding-l {
+  padding: $padding-l;
+}
+
+.padding-xl {
+  padding: $padding-xl;
+}

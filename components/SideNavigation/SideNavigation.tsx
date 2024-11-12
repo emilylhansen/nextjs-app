@@ -13,6 +13,7 @@ import Link from "next/link";
 import styles from "./sideNavigation.module.scss";
 import { Array, pipe, String } from "effect";
 import { NavigationItem } from "@/components/SideNavigation/sideNavigation.types";
+import { Padding } from "@/styles/spacing.types";
 
 const SideNavigation = () => {
   const activePage = useAppSelector(selectActivePage);
@@ -28,7 +29,7 @@ const SideNavigation = () => {
     pipe(title, String.toLowerCase, String.capitalize);
 
   return (
-    <Paper className={styles.paper} shadow="xl" radius="xl" p="xl">
+    <Paper className={styles.paper} shadow="xl" radius="xl" padding={Padding.M}>
       <Title order={3}>
         <ThemeIcon variant="white">
           <IconChartDonut2 />

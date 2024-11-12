@@ -19,16 +19,10 @@ export const Cards = () => {
           <IconSquarePlus stroke={3} />
         </ActionIcon>
       </div>
-      <div className="flex flex-col-reverse mb-8">
-        <div className="-mt-[150px] w-[80%] mx-auto from-indigo-400/[0.25] to-fuchsia-400/[0.25]">
-          <Card />
-        </div>
-        <div className="-mt-[150px] w-[90%] mx-auto from-indigo-400/[0.5] to-fuchsia-400/[0.5]">
-          <Card />
-        </div>
-        <div className="from-indigo-400 to-fuchsia-400">
-          <Card />
-        </div>
+      <div className={styles.cardsWrapper}>
+        <Card className={styles.cardA} />
+        <Card className={styles.cardB} />
+        <Card />
       </div>
       <Modal opened={opened} onClose={close} title="Add Card" centered>
         {/* Modal content */}

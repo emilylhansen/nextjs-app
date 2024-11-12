@@ -1,4 +1,4 @@
-@use "../../styles/variables";
+@use "../../styles/partials/variables";
 
 .topWrapper {
   display: flex;
@@ -17,4 +17,26 @@
   font-weight: variables.$font-weight-bold;
   color: variables.$white;
   margin-left: 8px;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 8px;
+}
+
+.cardA {
+  margin-top: -155px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 25%;
+}
+
+.cardB {
+  margin-top: -155px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 50%;
 }

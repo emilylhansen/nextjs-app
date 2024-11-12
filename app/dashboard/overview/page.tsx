@@ -1,6 +1,6 @@
 "use client";
 import { Balance } from "@/components/Balance/Balance";
-import { Expenses } from "@/components/Expenses";
+import { Expenses } from "@/components/Expenses/Expenses";
 import { TransactionsOverview } from "@/components/TransactionsOverview";
 import React from "react";
 import { Effect, Schedule, pipe, Array, Option } from "effect";
@@ -39,13 +39,13 @@ const a = async () => {
   console.log("end");
 };
 const Page = () => {
-  const dispatch = useAppDispatch();
-  const usersById = useAppSelector(selectUsersById);
+  // const dispatch = useAppDispatch();
+  // const usersById = useAppSelector(selectUsersById);
 
-  React.useEffect(() => {
-    dispatch(fetchUsersById(10));
-  }, [dispatch]);
-  a();
+  // React.useEffect(() => {
+  //   dispatch(fetchUsersById(10));
+  // }, [dispatch]);
+  // a();
 
   // const a = pipe(usersById, Either.map);
 

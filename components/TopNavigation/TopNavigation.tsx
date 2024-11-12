@@ -1,11 +1,11 @@
 "use client";
 import Paper from "@/components/Paper/Paper";
-import { TopNavigationItem } from "@/components/TopNavigation/topNavigation.types";
 import { List, ThemeIcon } from "@mantine/core";
 import { Array, pipe } from "effect";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./topNavigation.module.scss";
+import { TopNavigationItem } from "@/components/TopNavigation/topNavigation.types";
 
 export const TopNavigation = ({
   routes,

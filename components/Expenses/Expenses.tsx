@@ -1,13 +1,17 @@
 "use client";
 import React from "react";
 import { PieChart } from "@mui/x-charts/PieChart";
-import { Paper } from "@mui/material";
+import Paper from "@/components/Paper/Paper";
+import styles from "./expenses.module.scss";
+import { Title } from "@mantine/core";
+import { Padding } from "@/styles/spacing.types";
 
 export const Expenses = () => {
   return (
-    <Paper className="h-full rounded-3xl flex flex-col p-6">
-      <span className="bold font-bold pb-4">Expenses</span>
-
+    <Paper className={styles.paper} shadow="xl" radius="xl" padding={Padding.M}>
+      <Title order={5} fw="bold" className={styles.title}>
+        Expenses
+      </Title>
       <PieChart
         sx={{
           ".MuiChartsLegend-series text": {
@@ -15,7 +19,7 @@ export const Expenses = () => {
             fontSize: "0.8rem !important",
           },
         }}
-        className="flex justify-center items-center"
+        className={styles.chart}
         series={[
           {
             data: [

@@ -4,9 +4,17 @@ import { IconCircleFilled } from "@tabler/icons-react";
 import { pipe, Array } from "effect";
 import Paper from "@/components/Paper/Paper";
 
-export const Card = () => {
+type Props = {
+  className?: string;
+};
+
+export const Card = ({ className = "" }: Props) => {
   return (
-    <Paper shadow="xl" radius="xl" className={styles.paper}>
+    <Paper
+      shadow="xl"
+      radius="xl"
+      className={pipe([styles.paper, className], Array.join(" "))}
+    >
       <div className={styles.topWrapper}>
         <div className={styles.circlesWrapper}>
           <IconCircleFilled className={styles.circle1} />

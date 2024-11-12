@@ -1,11 +1,29 @@
-import React from "react";
+import { Padding } from "@/styles/spacing.types";
+import { combineClassNames } from "@/utils";
 import { Paper as PaperM, PaperProps as PaperPropsM } from "@mantine/core";
-import "./Paper.scss";
+import React from "react";
+import styles from "./paper.module.scss";
 
-type Props = PaperPropsM & { children?: React.ReactNode };
+type Props = PaperPropsM & {
+  padding?: Padding;
+  className?: string;
+  children?: React.ReactNode;
+};
 
-const Paper = (props: Props) => {
-  return <PaperM {...props}>{props.children}</PaperM>;
+const Paper = ({
+  padding = Padding.S,
+  className = "",
+  children,
+  ...rest
+}: Props) => {
+  return (
+    <PaperM
+      className={combineClassNames([className, styles.paper, padding])}
+      {...rest}
+    >
+      {children}
+    </PaperM>
+  );
 };
 
 export default Paper;

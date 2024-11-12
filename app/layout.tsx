@@ -1,10 +1,10 @@
 import { store } from "@/lib/store";
-import "./globals.css";
+// import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import React from "react";
 import { Providers } from "@/app/provider";
-import "../styles/global.scss";
+import "../styles/main.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
