@@ -1,4 +1,4 @@
-@use "../../styles/partials/variables";
+@use "../../../styles/partials/variables";
 
 .paper {
   position: relative;
@@ -9,11 +9,7 @@
   width: 100%;
   height: 11vw;
   box-sizing: border-box;
-  background-image: linear-gradient(
-    to right,
-    variables.$primary-color,
-    variables.$secondary-color
-  );
+  background-image: variables.$gradient-bottom-left;
   p {
     font-weight: variables.$font-weight-bold;
   }

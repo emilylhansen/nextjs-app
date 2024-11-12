@@ -1,5 +1,5 @@
 "use client";
-import { Card } from "@/components/Card/Card";
+import { Card } from "@/components/dashboard/Card/Card";
 import { ActionIcon, Modal, Pill, Title } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconSquarePlus } from "@tabler/icons-react";

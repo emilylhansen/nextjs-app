@@ -14,11 +14,13 @@ $black: #000;
 // Branding
 // Primary
 $primary-color: #6f82ff;
+$primary-color-extra-light: #e9eeff;
 $primary-color-light: #ced6ff;
 $primary-color-dark: #3750fe;
 
 // Secondary
 $secondary-color: #ff9cc3;
+$secondary-color-extra-light: #ffe8f4;
 $secondary-color-light: #ffcfe3;
 $secondary-color-dark: #fe65a2;
 
@@ -37,18 +39,172 @@ $warning-color: #18c378;
 $warning-color-light: #e6f8f0;
 $warning-color-dark: #009c5c;
 
-// Gradient
-$gradient-primary: linear-gradient(
+// Gradient Directions - Standard
+$gradient-bottom: linear-gradient(
   to bottom,
-  var($primary-color, $secondary-color)
+  var(--color-start, $primary-color),
+  var(--color-end, $secondary-color)
 );
-$gradient-primary-light: linear-gradient(
-  to bottom,
-  var($primary-color-light, $secondary-color-light)
+$gradient-top: linear-gradient(
+  to top,
+  var(--color-start, $primary-color),
+  var(--color-end, $secondary-color)
 );
-$gradient-primary-dark: linear-gradient(
+$gradient-right: linear-gradient(
+  to right,
+  var(--color-start, $primary-color),
+  var(--color-end, $secondary-color)
+);
+$gradient-left: linear-gradient(
+  to left,
+  var(--color-start, $primary-color),
+  var(--color-end, $secondary-color)
+);
+$gradient-bottom-right: linear-gradient(
+  to bottom right,
+  var(--color-start, $primary-color),
+  var(--color-end, $secondary-color)
+);
+$gradient-bottom-left: linear-gradient(
+  to bottom left,
+  var(--color-start, $primary-color),
+  var(--color-end, $secondary-color)
+);
+$gradient-top-right: linear-gradient(
+  to top right,
+  var(--color-start, $primary-color),
+  var(--color-end, $secondary-color)
+);
+$gradient-top-left: linear-gradient(
+  to top left,
+  var(--color-start, $primary-color),
+  var(--color-end, $secondary-color)
+);
+
+// Gradient Directions - Extra Light
+$gradient-bottom-extra-light: linear-gradient(
   to bottom,
-  var($primary-color-dark, $secondary-color-dark)
+  var(--color-start, $primary-color-extra-light),
+  var(--color-end, $secondary-color-extra-light)
+);
+$gradient-top-extra-light: linear-gradient(
+  to top,
+  var(--color-start, $primary-color-extra-light),
+  var(--color-end, $secondary-color-extra-light)
+);
+$gradient-right-extra-light: linear-gradient(
+  to right,
+  var(--color-start, $primary-color-extra-light),
+  var(--color-end, $secondary-color-extra-light)
+);
+$gradient-left-extra-light: linear-gradient(
+  to left,
+  var(--color-start, $primary-color-extra-light),
+  var(--color-end, $secondary-color-extra-light)
+);
+$gradient-bottom-right-extra-light: linear-gradient(
+  to bottom right,
+  var(--color-start, $primary-color-extra-light),
+  var(--color-end, $secondary-color-extra-light)
+);
+$gradient-bottom-left-extra-light: linear-gradient(
+  to bottom left,
+  var(--color-start, $primary-color-extra-light),
+  var(--color-end, $secondary-color-extra-light)
+);
+$gradient-top-right-extra-light: linear-gradient(
+  to top right,
+  var(--color-start, $primary-color-extra-light),
+  var(--color-end, $secondary-color-extra-light)
+);
+$gradient-top-left-extra-light: linear-gradient(
+  to top left,
+  var(--color-start, $primary-color-extra-light),
+  var(--color-end, $secondary-color-extra-light)
+);
+
+// Gradient Directions - Light
+$gradient-bottom-light: linear-gradient(
+  to bottom,
+  var(--color-start, $primary-color-light),
+  var(--color-end, $secondary-color-light)
+);
+$gradient-top-light: linear-gradient(
+  to top,
+  var(--color-start, $primary-color-light),
+  var(--color-end, $secondary-color-light)
+);
+$gradient-right-light: linear-gradient(
+  to right,
+  var(--color-start, $primary-color-light),
+  var(--color-end, $secondary-color-light)
+);
+$gradient-left-light: linear-gradient(
+  to left,
+  var(--color-start, $primary-color-light),
+  var(--color-end, $secondary-color-light)
+);
+$gradient-bottom-right-light: linear-gradient(
+  to bottom right,
+  var(--color-start, $primary-color-light),
+  var(--color-end, $secondary-color-light)
+);
+$gradient-bottom-left-light: linear-gradient(
+  to bottom left,
+  var(--color-start, $primary-color-light),
+  var(--color-end, $secondary-color-light)
+);
+$gradient-top-right-light: linear-gradient(
+  to top right,
+  var(--color-start, $primary-color-light),
+  var(--color-end, $secondary-color-light)
+);
+$gradient-top-left-light: linear-gradient(
+  to top left,
+  var(--color-start, $primary-color-light),
+  var(--color-end, $secondary-color-light)
+);
+
+// Gradient Directions - Dark
+$gradient-bottom-dark: linear-gradient(
+  to bottom,
+  var(--color-start, $primary-color-dark),
+  var(--color-end, $secondary-color-dark)
+);
+$gradient-top-dark: linear-gradient(
+  to top,
+  var(--color-start, $primary-color-dark),
+  var(--color-end, $secondary-color-dark)
+);
+$gradient-right-dark: linear-gradient(
+  to right,
+  var(--color-start, $primary-color-dark),
+  var(--color-end, $secondary-color-dark)
+);
+$gradient-left-dark: linear-gradient(
+  to left,
+  var(--color-start, $primary-color-dark),
+  var(--color-end, $secondary-color-dark)
+);
+$gradient-bottom-right-dark: linear-gradient(
+  to bottom right,
+  var(--color-start, $primary-color-dark),
+  var(--color-end, $secondary-color-dark)
+);
+$gradient-bottom-left-dark: linear-gradient(
+  to bottom left,
+  var(--color-start, $primary-color-dark),
+  var(--color-end, $secondary-color-dark)
+);
+$gradient-top-right-dark: linear-gradient(
+  to top right,
+  var(--color-start, $primary-color-dark),
+  var(--color-end, $secondary-color-dark)
+);
+$gradient-top-left-dark: linear-gradient(
+  to top left,
+  var(--color-start, $primary-color-dark),
+  var(--color-end, $secondary-color-dark)
 );
 
 // Font Families

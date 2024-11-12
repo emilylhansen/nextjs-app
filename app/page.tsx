@@ -1,4 +1,4 @@
-import { Grid } from "@/components/Grid";
+import { Grid } from "@/components/layout/Grid/Grid";
 import React from "react";
 
 const Home = ({ children }: { children: React.ReactNode }) => {

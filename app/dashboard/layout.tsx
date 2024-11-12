@@ -1,7 +1,7 @@
 "use client";
-import { Grid } from "@/components/Grid";
+import { Grid } from "@/components/layout/Grid/Grid";
 import { Header } from "@/components/Header";
-import { TopNavigation } from "@/components/TopNavigation/TopNavigation";
+import { TopNavigation } from "@/components/dashboard/TopNavigation/TopNavigation";
 import React from "react";
 
 import {

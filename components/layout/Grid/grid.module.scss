@@ -1,0 +1,23 @@
+@use "../../../styles/partials/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 1rem;
+  height: 100vh;
+  background-image: variables.$gradient-bottom-left-extra-light;
+}
+
+.sideNavigation {
+  grid-column: span 2;
+  grid-row: span 8;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar {
+  grid-column: 10 / span 3;
+  grid-row: 1 / span 8;
+}

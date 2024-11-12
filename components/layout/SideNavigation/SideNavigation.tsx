@@ -1,19 +1,19 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
-import Paper from "@/components/Paper/Paper";
-import { NAVIGATION_ITEMS } from "@/components/SideNavigation/sideNavigation.constants";
+import Paper from "@/components/core/Paper/Paper";
+import { NAVIGATION_ITEMS } from "@/components/layout/SideNavigation/sideNavigation.constants";
+import { NavigationItem } from "@/components/layout/SideNavigation/sideNavigation.types";
 import {
   selectActivePage,
   set,
 } from "@/lib/features/navigation/navigationSlice";
+import { Padding } from "@/styles/spacing.types";
 import { List, ThemeIcon, Title } from "@mantine/core";
 import { IconChartDonut2 } from "@tabler/icons-react";
+import { Array, pipe, String } from "effect";
 import Link from "next/link";
 import styles from "./sideNavigation.module.scss";
-import { Array, pipe, String } from "effect";
-import { NavigationItem } from "@/components/SideNavigation/sideNavigation.types";
-import { Padding } from "@/styles/spacing.types";
 
 const SideNavigation = () => {
   const activePage = useAppSelector(selectActivePage);

@@ -2,7 +2,7 @@ import { Text } from "@mantine/core";
 import styles from "./card.module.scss";
 import { IconCircleFilled } from "@tabler/icons-react";
 import { pipe, Array } from "effect";
-import Paper from "@/components/Paper/Paper";
+import Paper from "@/components/core/Paper/Paper";
 
 type Props = {
   className?: string;

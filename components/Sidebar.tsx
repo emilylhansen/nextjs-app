@@ -1,4 +1,4 @@
-import { Cards } from "@/components/Cards/Cards";
+import { Cards } from "@/components/dashboard/Cards/Cards";
 import { Receivers } from "@/components/Receivers";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import Avatar from "@mui/material/Avatar";

@@ -1,4 +1,4 @@
-import Paper from "@/components/Paper/Paper";
+import Paper from "@/components/core/Paper/Paper";
 import styles from "./Balance.module.scss";
 import { Text, Pill } from "@mantine/core";
 import { IconArrowUp } from "@tabler/icons-react";

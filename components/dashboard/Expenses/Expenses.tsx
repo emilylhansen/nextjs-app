@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { PieChart } from "@mui/x-charts/PieChart";
-import Paper from "@/components/Paper/Paper";
+import Paper from "@/components/core/Paper/Paper";
 import styles from "./expenses.module.scss";
 import { Title } from "@mantine/core";
 import { Padding } from "@/styles/spacing.types";
