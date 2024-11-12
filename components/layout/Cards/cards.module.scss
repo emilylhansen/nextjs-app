@@ -4,25 +4,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .title {
-  margin-bottom: 4px;
   display: flex;
   align-items: center;
 }
 
-.pill {
-  background-color: variables.$primary-color;
-  font-weight: variables.$font-weight-bold;
-  color: variables.$white;
+.badge {
   margin-left: 8px;
 }
 
 .cardsWrapper {
   display: flex;
   flex-direction: column-reverse;
-  margin-bottom: 8px;
 }
 
 .cardA {

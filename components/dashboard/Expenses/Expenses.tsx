@@ -23,9 +23,24 @@ export const Expenses = () => {
         series={[
           {
             data: [
-              { id: 0, value: 10, label: "Utilities", color: "#FF8BB9" },
-              { id: 1, value: 15, label: "Medical", color: "#6F82FF" },
-              { id: 2, value: 20, label: "Entertainment", color: "#FEAFD0" },
+              {
+                id: 0,
+                value: 10,
+                label: "Utilities",
+                color: styles.primaryColor,
+              },
+              {
+                id: 1,
+                value: 15,
+                label: "Medical",
+                color: styles.secondaryColor,
+              },
+              {
+                id: 2,
+                value: 20,
+                label: "Entertainment",
+                color: styles.secondaryColorLight,
+              },
             ],
           },
         ]}

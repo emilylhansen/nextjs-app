@@ -1,12 +1,16 @@
 "use client";
-import { Paper } from "@mui/material";
-import React from "react";
+import Paper from "@/components/core/Paper/Paper";
+import { Padding } from "@/styles/spacing.types";
+import { Title } from "@mantine/core";
 import { BarChart } from "@mui/x-charts/BarChart";
+import styles from "./transactionsOverview.module.scss";
 
 export const TransactionsOverview = () => {
   return (
-    <Paper className="h-full rounded-3xl p-6">
-      <span className="bold font-bold">Transactions Overview</span>
+    <Paper className={styles.paper} shadow="xl" radius="xl" padding={Padding.M}>
+      <Title order={5} fw="bold" className={styles.title}>
+        Transactions Overview
+      </Title>
 
       <BarChart
         sx={{
@@ -20,8 +24,8 @@ export const TransactionsOverview = () => {
         }}
         xAxis={[{ scaleType: "band", data: ["21 Oct", "22 Oct"] }]}
         series={[
-          { data: [4, 3], color: "#FF8BB9", label: "Savings" },
-          { data: [1, 6], color: "#6F82FF", label: "Expenses" },
+          { data: [4, 3], color: styles.primaryColor, label: "Savings" },
+          { data: [1, 6], color: styles.secondaryColor, label: "Expenses" },
         ]}
       />
     </Paper>

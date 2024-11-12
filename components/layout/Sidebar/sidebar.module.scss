@@ -1,0 +1,26 @@
+@use "../../../styles/partials/variables";
+
+.paper {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.topWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.badgeLabel {
+  color: variables.$primary-color;
+}
+
+.cards,
+.receivers,
+.recentActivity {
+  margin-bottom: 2rem;
+}

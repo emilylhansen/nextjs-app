@@ -22,9 +22,9 @@ export const Card = ({ className = "" }: Props) => {
         </div>
         <Text size="xs">Debit</Text>
       </div>
-      <div className={styles.totalWrapper}>
+      <div className={styles.balanceWrapper}>
         <Text size="xs">$</Text>
-        <Text size="4xl" className={styles.total}>
+        <Text size="4xl" className={styles.balance}>
           6,544
         </Text>
       </div>

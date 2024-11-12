@@ -18,7 +18,8 @@ const Paper = ({
 }: Props) => {
   return (
     <PaperM
-      className={combineClassNames([className, styles.paper, padding])}
+      className={combineClassNames([className, padding])}
+      classNames={{ root: styles.paper }}
       {...rest}
     >
       {children}

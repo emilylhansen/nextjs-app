@@ -1,6 +1,6 @@
 "use client";
 import { Grid } from "@/components/layout/Grid/Grid";
-import { Header } from "@/components/Header";
+import { Header } from "@/components/layout/Header/Header";
 import { TopNavigation } from "@/components/dashboard/TopNavigation/TopNavigation";
 import React from "react";
 
@@ -14,7 +14,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Grid>
       <div className="col-span-7 col-start-3 row-start-1 pt-10 px-6">
-        <Header />
+        <Header title="Dashboard" />
       </div>
       <React.Fragment>
         <div className="col-span-7 col-start-3 row-start-2 px-6">

@@ -39,6 +39,49 @@ $warning-color: #18c378;
 $warning-color-light: #e6f8f0;
 $warning-color-dark: #009c5c;
 
+:export {
+  // Grayscale
+  white: #fff;
+  gray100: #edf5ff;
+  gray200: #e0e7f1;
+  gray300: #c3ccd8;
+  gray400: #a4afc0;
+  gray500: #8997ab;
+  gray600: #78879f;
+  gray700: #6e809a;
+  gray800: #6e809a;
+  gray900: #50617b;
+  black: #000;
+
+  // Branding
+  // Primary
+  primaryColor: #6f82ff;
+  primaryColorExtraLight: #e9eeff;
+  primaryColorLight: #ced6ff;
+  primaryColorDark: #3750fe;
+
+  // Secondary
+  secondaryColor: #ff9cc3;
+  secondaryColorExtraLight: #ffe8f4;
+  secondaryColorLight: #ffcfe3;
+  secondaryColorDark: #fe65a2;
+
+  // Info
+  infoColor: #18c378;
+  infoColorLight: #e6f8f0;
+  infoColorDark: #009c5c;
+
+  // Success
+  successColor: #18c378;
+  successColorLight: #e6f8f0;
+  successColorDark: #009c5c;
+
+  // Warning
+  warningColor: #18c378;
+  warningColorLight: #e6f8f0;
+  warningColorDark: #009c5c;
+}
+
 // Gradient Directions - Standard
 $gradient-bottom: linear-gradient(
   to bottom,

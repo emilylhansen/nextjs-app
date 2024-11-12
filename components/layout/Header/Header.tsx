@@ -6,22 +6,31 @@ import Select from "@mui/material/Select";
 import { pipe } from "fp-ts/lib/function";
 import * as A from "fp-ts/lib/Array";
 import * as NEA from "fp-ts/lib/NonEmptyArray";
+import styles from "./header.module.scss";
+import { Title } from "@mantine/core";
 
-export const Header = () => {
-  const dates = pipe(
-    NEA.range(1, 10),
-    NEA.reduce([new Date()], (dates, _) => {
-      const prevDate = new Date(dates[dates.length - 1]);
-      prevDate.setDate(prevDate.getDate() + 1);
-      return [...dates, prevDate];
-    }),
-    A.map((date) => date.toDateString())
-  );
+type Props = { title: string; children?: React.ReactNode };
+
+export const Header = ({ title, children }: Props) => {
+  // const dates = pipe(
+  //   NEA.range(1, 10),
+  //   NEA.reduce([new Date()], (dates, _) => {
+  //     const prevDate = new Date(dates[dates.length - 1]);
+  //     prevDate.setDate(prevDate.getDate() + 1);
+  //     return [...dates, prevDate];
+  //   }),
+  //   A.map((date) => date.toDateString())
+  // );
 
   return (
-    <header className="flex justify-between">
-      <h1 className="text-4xl font-bold">Dashboard</h1>
-      <Box sx={{ minWidth: 140 }}>
+    <header className={styles.header}>
+      <Title order={1} size={36}>
+        {title}
+      </Title>
+
+      <div className={styles.children}>{children}</div>
+
+      {/* <Box sx={{ minWidth: 140 }}>
         <FormControl fullWidth size="small" className="text-xs	">
           <InputLabel id="demo-simple-select-label">Showing for</InputLabel>
           <Select
@@ -40,7 +49,7 @@ export const Header = () => {
             )}
           </Select>
         </FormControl>
-      </Box>
+      </Box> */}
     </header>
   );
 };

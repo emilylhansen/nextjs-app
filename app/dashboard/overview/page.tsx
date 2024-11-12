@@ -1,7 +1,7 @@
 "use client";
 import { Balance } from "@/components/dashboard/Balance/Balance";
 import { Expenses } from "@/components/dashboard/Expenses/Expenses";
-import { TransactionsOverview } from "@/components/TransactionsOverview";
+import { TransactionsOverview } from "@/components/dashboard/TransactionsOverview/TransactionsOverview";
 import React from "react";
 import { Effect, Schedule, pipe, Array, Option } from "effect";
 import * as API from "@/app/api/API";

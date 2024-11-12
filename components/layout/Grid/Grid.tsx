@@ -1,5 +1,5 @@
 import SideNavigation from "@/components/layout/SideNavigation/SideNavigation";
-import { Sidebar } from "@/components/Sidebar";
+import { Sidebar } from "@/components/layout/Sidebar/Sidebar";
 import React from "react";
 import styles from "./grid.module.scss";
 

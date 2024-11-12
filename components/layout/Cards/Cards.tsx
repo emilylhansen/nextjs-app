@@ -1,8 +1,8 @@
 "use client";
-import { Card } from "@/components/dashboard/Card/Card";
-import { ActionIcon, Modal, Pill, Title } from "@mantine/core";
+import { Card } from "@/components/layout/Card/Card";
+import { ActionIcon, Modal, Badge, Title } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconSquarePlus } from "@tabler/icons-react";
+import { IconPlus } from "@tabler/icons-react";
 import React from "react";
 import styles from "./cards.module.scss";
 
@@ -13,10 +13,20 @@ export const Cards = () => {
     <React.Fragment>
       <div className={styles.topWrapper}>
         <Title order={5} fw="bold" className={styles.title}>
-          Your cards <Pill className={styles.pill}>6</Pill>
+          Your cards
+          <Badge className={styles.badge} size="md" color="primary.3">
+            6
+          </Badge>
         </Title>
-        <ActionIcon size="md" variant="transparent" color="gray" onClick={open}>
-          <IconSquarePlus stroke={3} />
+        <ActionIcon
+          variant="outline"
+          aria-label="Add"
+          radius="sm"
+          color="gray"
+          size="sm"
+          onClick={open}
+        >
+          <IconPlus stroke={3} />
         </ActionIcon>
       </div>
       <div className={styles.cardsWrapper}>

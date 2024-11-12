@@ -1,12 +1,10 @@
-import RecentActivityItem from "@/components/RecentActivityItem";
-import Link from "next/link";
-import React from "react";
-import Skeleton from "@mui/material/Skeleton";
 import { Schema } from "@effect/schema";
-import { Array, Effect, Schedule, Option, pipe } from "effect";
-import { TimeoutException } from "effect/Cause";
 import { ParseError } from "@effect/schema/ParseResult";
-import { Train_One } from "next/font/google";
+import { Title } from "@mantine/core";
+import { Effect } from "effect";
+import { TimeoutException } from "effect/Cause";
+import React from "react";
+import styles from "./recentActivity.module.scss";
 
 class GetTransactionsError {
   readonly "_tag": "GetTransactionsError";
@@ -24,22 +22,25 @@ export const Transaction = Schema.Struct({
 const Transactions = Schema.Array(Transaction);
 type Transactions = Schema.Schema.Type<typeof Transactions>;
 
-export const RecentActivity = ({
-  transactions,
-}: {
+type Props = {
   transactions: Effect.Effect<
     Transactions,
     GetTransactionsError | TimeoutException | ParseError
   >;
-}) => {
-  if (Effect.isFailure(transactions)) {
-    debugger;
-  }
+};
+
+export const RecentActivity = () => {
+  // if (Effect.isFailure(transactions)) {
+  //   debugger;
+  // }
 
   return (
     <React.Fragment>
-      <h3 className="font-bold mb-4">Recent Activity</h3>
-      <ul className="flex-1">
+      <Title order={5} fw="bold" className={styles.title}>
+        Recent Activity
+      </Title>
+
+      {/* <ul className="flex-1">
         {Effect.isFailure(transactions) ? (
           <Skeleton>failure</Skeleton>
         ) : (
@@ -61,7 +62,7 @@ export const RecentActivity = ({
             See all activity
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </React.Fragment>
   );
 };

@@ -11,7 +11,7 @@ export const Balance = ({ balance }: Props) => {
       <Text size="sm" fw={700}>
         Total Balance
       </Text>
-      <div className={styles.wrapper}>
+      <div className={styles.balanceWrapper}>
         <Text size="sm" fw={700}>
           $
         </Text>
