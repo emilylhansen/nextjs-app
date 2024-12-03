@@ -3,7 +3,7 @@ import { Cards } from "@/components/layout/Cards/Cards";
 import { Receivers } from "@/components/layout/Receivers/Receivers";
 import { RecentActivity } from "@/components/layout/RecentActivity/RecentActivity";
 import { Padding } from "@/styles/spacing.types";
-import { Avatar, Badge, Group, HoverCard } from "@mantine/core";
+import { Avatar, Badge, Group } from "@mantine/core";
 import { IconBell } from "@tabler/icons-react";
 import styles from "./sidebar.module.scss";
 
@@ -12,7 +12,7 @@ export const Sidebar = () => {
     <Paper className={styles.paper} padding={Padding.M}>
       <div className={styles.topWrapper}>
         <Group justify="center">
-          <HoverCard
+          {/* <HoverCard
             width={320}
             shadow="md"
             withArrow
@@ -33,7 +33,7 @@ export const Sidebar = () => {
               </Group>
             </HoverCard.Target>
             <HoverCard.Dropdown>dfdf</HoverCard.Dropdown>
-          </HoverCard>
+          </HoverCard> */}
         </Group>
 
         <Avatar alt="Person 1" src="/assets/person_1.png" />

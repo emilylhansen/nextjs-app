@@ -9,10 +9,7 @@ import * as API from "@/app/api/API";
 import { Schema } from "@effect/schema";
 import * as Model from "@/app/api/Model";
 import { HttpClient } from "@effect/platform";
-import {
-  fetchUsersById,
-  selectUsersById,
-} from "@/lib/features/usersById/usersByIdSlice";
+
 import { ErrorBoundary } from "react-error-boundary";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
@@ -33,22 +30,7 @@ function fallbackRender({
   );
 }
 
-const a = async () => {
-  console.log("start");
-  await new Promise((res) => setTimeout(res, 10000));
-  console.log("end");
-};
 const Page = () => {
-  // const dispatch = useAppDispatch();
-  // const usersById = useAppSelector(selectUsersById);
-
-  // React.useEffect(() => {
-  //   dispatch(fetchUsersById(10));
-  // }, [dispatch]);
-  // a();
-
-  // const a = pipe(usersById, Either.map);
-
   return (
     <ErrorBoundary
       fallbackRender={fallbackRender}

@@ -1,2 +1,7 @@
-export const dynamic = "force-dynamic"; // defaults to auto
-export async function GET(request: Request) {}
+export const dynamic = "force-static";
+
+export const GET = (request: Request) => {
+  return new Response("Hello,API!", {
+    status: 200,
+  });
+};

@@ -1,4 +1,4 @@
-import Avatar from "@mui/material/Avatar";
+import { Avatar } from "@mantine/core";
 
 type RecentActivityItemProps = {
   value: string;

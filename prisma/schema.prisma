@@ -11,20 +11,42 @@ datasource db {
 }
 
 model Transaction {
-  id        String   @id @default(uuid())
-  type      String
-  value     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id              String   @id
+  date            DateTime @default(now())
+  description     String
+  category        String //Category
+  amount          Float
+  storeName       String
+  transactionType String //TransactionType
+  userId          String
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String   @id
   first     String
   last      String
-  username  String
   email     String   @unique
   phone     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// enum Category {
+//   INCOME
+//   GROCERIES
+//   UTILITIES
+//   ENTERTAINMENT
+//   RENT
+//   TRANSPORTATION
+//   INSURANCE
+//   INVESTMENT
+//   SAVINGS
+//   DEBT
+//   OTHER
+// }
+
+// enum TransactionType {
+//   EXPENSE
+//   REFUND
+//   DEPOSIT
+// }

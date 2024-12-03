@@ -1,7 +1,6 @@
 "use client";
 import { UserS } from "@/app/api/Model";
 import { ActionIcon, Avatar, Badge, Group, Title } from "@mantine/core";
-// import Avatar from "@mui/material/Avatar";
 import React from "react";
 // import { User } from "@prisma/client";
 import { IconPlus } from "@tabler/icons-react";
@@ -25,6 +24,7 @@ export const Receivers = ({ users }: { users: Array<UserS> }) => {
           radius="lg"
           size="lg"
           color="gray"
+          classNames={{ root: styles.actionIcon }}
         >
           <IconPlus stroke={3} />
         </ActionIcon>

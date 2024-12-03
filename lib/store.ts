@@ -1,4 +1,4 @@
-import usersByIdReducer from "@/lib/features/usersById/usersByIdSlice";
+// import usersByIdReducer from "@/lib/features/usersById/usersByIdSlice";
 import navigationReducer from "@/lib/features/navigation/navigationSlice";
 import transactionsReducer from "@/lib/features/transactions/transactionsSlice";
 import { configureStore } from "@reduxjs/toolkit";
@@ -7,7 +7,7 @@ export const store = configureStore({
   reducer: {
     navigation: navigationReducer,
     transactions: transactionsReducer,
-    usersById: usersByIdReducer,
+    // usersById: usersByIdReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

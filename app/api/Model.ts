@@ -1,5 +1,5 @@
 import { Schema } from "@effect/schema";
-import { pipe } from "effect";
+import { Data, pipe } from "effect";
 import type { ParseResult } from "@effect/schema";
 
 const getUserSId = ({ actual }: ParseResult.ParseIssue) => {
@@ -72,13 +72,46 @@ export class GetUserByIdError {
   _tag = "GetUserByIdError";
 }
 
-export interface Todo {
-  _tag: "Todo";
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
-export class GetTodosError {
-  _tag = "GetTodosError";
-}
+export const TransactionType = Schema.Enums({
+  Expenses: "expenses",
+  Refund: "refund",
+  Deposit: "deposit",
+});
+export type TransactionType = Schema.Schema.Type<typeof TransactionType>;
+
+export const Category = Schema.Enums({
+  Income: "income",
+  Groceries: "groceries",
+  Utilities: "utilities",
+  Entertainment: "entertainment",
+  Rent: "rent",
+  Transportation: "transportation",
+  Insurance: "insurance",
+  Investment: "investment",
+  Savings: "savings",
+  Debt: "debt",
+  Other: "other",
+});
+
+export type Category = Schema.Schema.Type<typeof Category>;
+
+export const Transaction = Schema.Struct({
+  id: pipe(Schema.String, Schema.nonEmpty()),
+  date: pipe(Schema.Date, Schema.nonEmpty()),
+  description: Schema.String,
+  amount: Schema.Number,
+  storeName: pipe(Schema.String, Schema.nonEmpty()),
+  transactionType: TransactionType,
+  category: Category,
+  userId: pipe(Schema.String, Schema.nonEmpty()),
+});
+export type Transaction = Schema.Schema.Type<typeof Transaction>;
+type TransactionEncoded = Schema.Schema.Encoded<typeof Transaction>;
+type TransactionContext = Schema.Schema.Context<typeof Transaction>;
+
+// export class GetTransactionsError {
+//   readonly _tag = "GetTransactionsError";
+// }
+export class GetTransactionsError extends Data.TaggedError("GetTransactions")<{
+  message: string;
+}> {}

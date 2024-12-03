@@ -1,23 +1,16 @@
 import { Request } from "effect";
 import * as Model from "./Model";
 
-// Define a request to get multiple Todo items which might fail with a GetTodosError
-export interface GetTodos
-  extends Request.Request<Array<Model.Todo>, Model.GetTodosError> {
-  readonly _tag: "GetTodos";
+// Define a request to get multiple Transaction items which might
+// fail with a GetTransactionsError
+export interface GetTransactions
+  extends Request.Request<
+    Array<Model.Transaction>,
+    Model.GetTransactionsError
+  > {
+  readonly _tag: "GetTransactions";
 }
 
-// Create a tagged constructor for GetTodos requests
-export const GetTodos = Request.tagged<GetTodos>("GetTodos");
-
-// Define a request to fetch a User by ID which might fail with a GetUserByIdError
-export interface GetUserById
-  extends Request.Request<Model.User, Model.GetUserByIdError> {
-  readonly _tag: "GetUserById";
-  readonly id: number;
-}
-
-// Create a tagged constructor for GetUserById requests
-export const GetUserById = Request.tagged<GetUserById>("GetUserById");
-
-export type ApiRequest = GetTodos | GetUserById;
+// Create a tagged constructor for GetTransactions requests
+export const GetTransactions =
+  Request.tagged<GetTransactions>("GetTransactions");

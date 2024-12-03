@@ -1,13 +1,5 @@
-import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
-import { pipe } from "fp-ts/lib/function";
-import * as A from "fp-ts/lib/Array";
-import * as NEA from "fp-ts/lib/NonEmptyArray";
-import styles from "./header.module.scss";
 import { Title } from "@mantine/core";
+import styles from "./header.module.scss";
 
 type Props = { title: string; children?: React.ReactNode };
 
