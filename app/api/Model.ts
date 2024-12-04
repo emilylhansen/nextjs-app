@@ -115,3 +115,23 @@ type TransactionContext = Schema.Schema.Context<typeof Transaction>;
 export class GetTransactionsError extends Data.TaggedError("GetTransactions")<{
   message: string;
 }> {}
+
+export const APIStatus = Schema.Literal(
+  "idle",
+  "pending",
+  "rejected",
+  "fulfilled"
+);
+
+export const APIInfo = <ErrorType = any, DataType = any>(
+  errorType: Schema.Schema<ErrorType>,
+  dataType: Schema.Schema<DataType>
+) =>
+  Schema.Struct({
+    status: APIStatus,
+    error: Schema.Option(errorType),
+    data: Schema.Option(dataType),
+    // error: APIError<ErrorType>(errorType),
+    // data: APIData<DataType>(dataType),
+    lastUpdated: Schema.Date,
+  });

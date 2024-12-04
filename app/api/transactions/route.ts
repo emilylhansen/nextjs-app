@@ -1,7 +1,6 @@
 import prisma from "@/lib/db";
 import { Effect } from "effect";
 import * as Model from "../Model";
-import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const GET = async (request: Request) => {
   const res = await prisma.transaction.findMany();
@@ -19,12 +18,3 @@ export const GET_effect = Effect.tryPromise({
   catch: (error) =>
     new Model.GetTransactionsError({ message: JSON.stringify(error) }),
 });
-
-export const fetchTransactions = createAsyncThunk(
-  "transactions/fetchTransactions",
-  async (_, thunkAPI) => {
-    const a = Effect.runPromiseExit(GET_effect).then(console.log);
-
-    // return thunkAPI.rejectWithValue(error.message); // Pass error to extraReducers
-  }
-);
