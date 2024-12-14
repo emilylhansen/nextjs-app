@@ -43,7 +43,7 @@ export const Sidebar = () => {
         <Cards />
       </div>
       <div className={styles.receivers}>
-        <Receivers users={[]} />
+        <Receivers />
       </div>
       <div className={styles.recentActivity}>
         <RecentActivity />

@@ -1,3 +1,4 @@
+@use "./variables";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,6 +27,51 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.abc {
-  border: 1px solid blue;
+// Category Types
+.income {
+  color: variables.$income-color;
+}
+
+.groceries {
+  color: variables.$groceries-color;
+}
+
+.utilities {
+  color: variables.$utilities-color;
+}
+
+.entertainment {
+  color: variables.$entertainment-color;
+}
+
+.rent {
+  color: variables.$rent-color;
+}
+
+.transportation {
+  color: variables.$transportation-color;
+}
+
+.insurance {
+  color: variables.$insurance-color;
+}
+
+.investment {
+  color: variables.$investment-color;
+}
+
+.savings {
+  color: variables.$savings-color;
+}
+
+.debt {
+  color: variables.$debt-color;
+}
+
+.other {
+  color: variables.$other-color;
+}
+
+.mantine-Table-tbody .mantine-Table-tr[data-striped="odd"]:nth-of-type(odd) {
+  background-color: rgba(variables.$primary-color, 0.1);
 }

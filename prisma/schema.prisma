@@ -30,23 +30,3 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
-
-// enum Category {
-//   INCOME
-//   GROCERIES
-//   UTILITIES
-//   ENTERTAINMENT
-//   RENT
-//   TRANSPORTATION
-//   INSURANCE
-//   INVESTMENT
-//   SAVINGS
-//   DEBT
-//   OTHER
-// }
-
-// enum TransactionType {
-//   EXPENSE
-//   REFUND
-//   DEPOSIT
-// }

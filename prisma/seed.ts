@@ -1,13 +1,15 @@
-import { Array, pipe } from "effect";
-import { Category, TransactionType } from "./../app/api/Model";
+import "tsconfig-paths/register";
+import prisma from "../lib/db";
 import { faker } from "@faker-js/faker";
-import prisma from "@/lib/db";
+import { Array, pipe } from "effect";
 
 async function main() {
-  const userIds = pipe(Array.range(0, 10), Array.map(String));
+  console.log("Seeding...");
 
-  const makeUser = async (id: string) =>
-    await prisma.user.upsert({
+  const userIds = pipe(Array.range(0, 50), Array.map(String));
+
+  const makeUser = (id: string) =>
+    prisma.user.upsert({
       where: { id },
       update: {},
       create: {
@@ -23,7 +25,7 @@ async function main() {
 
   const users = await Promise.all(usersPromises);
 
-  const makeTransaction = async ({
+  const makeTransaction = ({
     index,
     userId,
   }: {
@@ -31,17 +33,32 @@ async function main() {
     userId: string;
   }) => {
     const id = `transaction${index}-${userId}`;
-    const category = String(faker.helpers.enumValue(Category.enums));
-    const transactionType = String(
-      faker.helpers.enumValue(TransactionType.enums)
-    );
+    const category = faker.helpers.arrayElement([
+      "income",
+      "groceries",
+      "utilities",
+      "entertainment",
+      "rent",
+      "transportation",
+      "insurance",
+      "investment",
+      "savings",
+      "debt",
+      "other",
+    ]);
 
-    return await prisma.transaction.upsert({
+    const transactionType = faker.helpers.arrayElement([
+      "expenses",
+      "refund",
+      "deposit",
+    ]);
+
+    return prisma.transaction.upsert({
       where: { id },
       update: {},
       create: {
         id,
-        date: faker.date.anytime(),
+        date: new Date(),
         description: faker.finance.transactionDescription(),
         category,
         amount: Number(faker.finance.amount()),
@@ -56,16 +73,19 @@ async function main() {
     userIds,
     Array.map((userId) =>
       pipe(
-        Array.range(0, 100),
+        Array.range(0, 10),
         Array.map((i) => makeTransaction({ index: i, userId }))
       )
-    )
+    ),
+    Array.flatten
   );
 
   const transactions = await Promise.all(transactionsPromises);
 
   console.log({ users, transactions });
+  console.log("Finished seeding.");
 }
+
 main()
   .then(async () => {
     await prisma.$disconnect();

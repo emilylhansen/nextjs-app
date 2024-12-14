@@ -1,19 +1,34 @@
 "use client";
-import { UserS } from "@/app/api/Model";
+import { useAppDispatch } from "@/app/hooks";
+import { getUsers } from "@/lib/features/users/usersActions";
+import { getUsersData } from "@/lib/features/users/usersSelectors";
 import { ActionIcon, Avatar, Badge, Group, Title } from "@mantine/core";
-import React from "react";
-// import { User } from "@prisma/client";
 import { IconPlus } from "@tabler/icons-react";
-import { Array, pipe } from "effect";
+import { Array, Option, pipe } from "effect";
+import React from "react";
+import { useSelector } from "react-redux";
 import styles from "./receivers.module.scss";
 
-export const Receivers = ({ users }: { users: Array<UserS> }) => {
+type Props = {};
+
+export const Receivers = (props: Props) => {
+  const dispatch = useAppDispatch();
+  const usersO = useSelector(getUsersData);
+  const users = pipe(
+    usersO,
+    Option.getOrElse(() => [])
+  );
+
+  React.useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
+
   return (
     <React.Fragment>
       <Title order={5} fw="bold" className={styles.title}>
         Receivers
         <Badge className={styles.badge} size="md" color="primary.3">
-          22
+          {users.length}
         </Badge>
       </Title>
 
@@ -29,13 +44,13 @@ export const Receivers = ({ users }: { users: Array<UserS> }) => {
           <IconPlus stroke={3} />
         </ActionIcon>
         {pipe(
-          Array.range(1, 6),
-          Array.map((i) => (
+          users,
+          Array.map((user, index) => (
             <Avatar
-              key={i}
-              alt={String(i)}
-              src={`/assets/person_${i}.png`}
-              title={String(i)}
+              key={user.id}
+              alt={user.name}
+              src={`/assets/person_${(index % 6) + 1}.png`}
+              title={user.name}
             />
           ))
         )}

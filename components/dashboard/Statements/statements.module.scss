@@ -1,7 +1,24 @@
+@use "../../../styles/partials/variables";
+
 .paper {
-  grid-column: 3 / span 7;
-  grid-row: 3 / span 6;
-  padding-bottom: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  overflow: hidden;
+}
+
+.tableWrapper {
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100%;
+}
+
+.table {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    position: sticky;
+    top: 0; /* Keeps the header fixed at the top */
+    z-index: 1; /* Ensures the header stays above the table body */
+    background-color: variables.$white;
+  }
 }
