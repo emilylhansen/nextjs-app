@@ -13,7 +13,10 @@ import {
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Grid>
-      <div className="col-span-7 col-start-3 row-start-1 pt-10 px-6">
+      <div
+        className="col-span-7 col-start-3 row-start-1 pt-10 px-6"
+        data-cy="dashboard-header"
+      >
         <Header title="Dashboard" />
       </div>
       <React.Fragment>

@@ -1,7 +1,8 @@
 import prisma from "@/lib/db";
 import { Effect } from "effect";
-import * as Model from "../Model";
+import { User, GetUsersError } from "../model/user";
 
+// Required for Next.js API routes
 export const GET = async (request: Request) => {
   const res = await prisma.user.findMany();
 
@@ -12,6 +13,6 @@ export const GET = async (request: Request) => {
 
 export const GET_effect = Effect.tryPromise({
   try: () =>
-    fetch("/api/users").then((res) => res.json() as Promise<Array<Model.User>>),
-  catch: (error) => new Model.GetUsersError({ message: JSON.stringify(error) }),
+    fetch("/api/users").then((res) => res.json() as Promise<Array<User>>),
+  catch: (error) => new GetUsersError({ message: JSON.stringify(error) }),
 });

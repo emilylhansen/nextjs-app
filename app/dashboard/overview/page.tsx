@@ -3,15 +3,10 @@ import { Balance } from "@/components/dashboard/Balance/Balance";
 import { Expenses } from "@/components/dashboard/Expenses/Expenses";
 import { TransactionsOverview } from "@/components/dashboard/TransactionsOverview/TransactionsOverview";
 import React from "react";
-import { Effect, Schedule, pipe, Array, Option } from "effect";
-import * as API from "@/app/api/API";
+import styles from "./overview.module.scss";
 // import * as Queries from "@/app/api/Queries";
-import { Schema } from "@effect/schema";
-import * as Model from "@/app/api/Model";
-import { HttpClient } from "@effect/platform";
 
 import { ErrorBoundary } from "react-error-boundary";
-import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
 function fallbackRender({
   error,
@@ -39,13 +34,13 @@ const Page = () => {
       }}
     >
       <React.Fragment>
-        <div className="col-span-3 row-span-3 col-start-3 row-start-3 pl-6">
-          <Balance balance={10000} />
+        <div className={styles.balance}>
+          <Balance balance={12345} />
         </div>
-        <div className="col-span-4 row-span-3 col-start-6 row-start-3 pr-6">
+        <div className={styles.expenses}>
           <Expenses />
         </div>
-        <div className="col-span-7 row-span-3 col-start-3 row-start-6 pb-4 px-6">
+        <div className={styles.transactionsOveriew}>
           <TransactionsOverview />
         </div>
       </React.Fragment>

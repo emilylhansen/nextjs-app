@@ -1,7 +1,8 @@
 import prisma from "@/lib/db";
 import { Effect } from "effect";
-import * as Model from "../Model";
+import { Transaction, GetTransactionsError } from "../model/transaction";
 
+// Required for Next.js API routes
 export const GET = async (request: Request) => {
   const res = await prisma.transaction.findMany();
 
@@ -13,8 +14,8 @@ export const GET = async (request: Request) => {
 export const GET_effect = Effect.tryPromise({
   try: () =>
     fetch("/api/transactions").then(
-      (res) => res.json() as Promise<Array<Model.Transaction>>
+      (res) => res.json() as Promise<Array<Transaction>>
     ),
   catch: (error) =>
-    new Model.GetTransactionsError({ message: JSON.stringify(error) }),
+    new GetTransactionsError({ message: JSON.stringify(error) }),
 });

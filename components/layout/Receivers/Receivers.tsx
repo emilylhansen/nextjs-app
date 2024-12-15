@@ -25,21 +25,29 @@ export const Receivers = (props: Props) => {
 
   return (
     <React.Fragment>
-      <Title order={5} fw="bold" className={styles.title}>
+      <Title className={styles.title} order={5} fw="bold">
         Receivers
-        <Badge className={styles.badge} size="md" color="primary.3">
+        <Badge
+          className={styles.badge}
+          aria-label={`There are ${users.length} recievers available`}
+          size="md"
+          color="primary.3"
+        >
           {users.length}
         </Badge>
       </Title>
 
-      <Group classNames={{ root: styles.group }}>
+      <Group
+        classNames={{ root: styles.group }}
+        aria-label="List of available recievers"
+      >
         <ActionIcon
+          classNames={{ root: styles.actionIcon }}
+          aria-label="Add reciever"
           variant="outline"
-          aria-label="Add"
           radius="lg"
           size="lg"
           color="gray"
-          classNames={{ root: styles.actionIcon }}
         >
           <IconPlus stroke={3} />
         </ActionIcon>
@@ -48,7 +56,7 @@ export const Receivers = (props: Props) => {
           Array.map((user, index) => (
             <Avatar
               key={user.id}
-              alt={user.name}
+              alt={`Reciever: ${user.name}`}
               src={`/assets/person_${(index % 6) + 1}.png`}
               title={user.name}
             />

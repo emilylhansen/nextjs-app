@@ -31,48 +31,13 @@ export const User = Schema.Struct({
     bs: pipe(Schema.String, Schema.nonEmpty()),
   }),
 }).annotations({
-  identifier: "UserS",
+  identifier: "User",
   parseIssueTitle: getUserId,
 });
 
 export type User = typeof User.Type;
-export const isUserS = Schema.is(User);
+export const isUser = Schema.is(User);
 
 export class GetUsersError extends Data.TaggedError("GetUsers")<{
-  message: string;
-}> {}
-
-export const TransactionType = Schema.Literal("expenses", "refund", "deposit");
-export type TransactionType = Schema.Schema.Type<typeof TransactionType>;
-
-export const Category = Schema.Literal(
-  "income",
-  "groceries",
-  "utilities",
-  "entertainment",
-  "rent",
-  "transportation",
-  "insurance",
-  "investment",
-  "savings",
-  "debt",
-  "other"
-);
-
-export const Transaction = Schema.Struct({
-  id: pipe(Schema.String, Schema.nonEmpty()),
-  date: Schema.Date,
-  description: Schema.String,
-  amount: Schema.Number,
-  storeName: pipe(Schema.String, Schema.nonEmpty()),
-  transactionType: TransactionType,
-  category: Category,
-  userId: pipe(Schema.String, Schema.nonEmpty()),
-});
-export type Transaction = Schema.Schema.Type<typeof Transaction>;
-type TransactionEncoded = Schema.Schema.Encoded<typeof Transaction>;
-type TransactionContext = Schema.Schema.Context<typeof Transaction>;
-
-export class GetTransactionsError extends Data.TaggedError("GetTransactions")<{
   message: string;
 }> {}

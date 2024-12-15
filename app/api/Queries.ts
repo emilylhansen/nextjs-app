@@ -1,12 +1,11 @@
 import { Effect } from "effect";
-import * as Model from "./Model";
-import * as Requests from "./Requests";
-import * as Resolvers from "./Resolvers";
+import * as Requests from "./requests";
+import * as Resolvers from "./resolvers";
 
-export const getTransactions: Effect.Effect<
-  Array<Model.Transaction>,
-  Model.GetTransactionsError
-> = Effect.request(
-  Requests.GetTransactions({}),
-  Resolvers.GetTransactionsResolver
-);
+// export const getTransactions: Effect.Effect<
+//   Array<Model.Transaction>,
+//   Model.GetTransactionsError
+// > = Effect.request(
+//   Requests.GetTransactions({}),
+//   Resolvers.GetTransactionsResolver
+// );

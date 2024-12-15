@@ -1,8 +1,8 @@
 import { Schema } from "@effect/schema";
-import * as Model from "../../../app/api/Model";
+import { Transaction } from "../../../app/api/model/transaction";
 import { APIInfo } from "@/lib/features/featuresTypes";
 
-export const TransactionsArray = Schema.Array(Model.Transaction);
+export const TransactionsArray = Schema.Array(Transaction);
 export type TransactionsArray = typeof TransactionsArray.Type;
 
 export const Transactions = APIInfo<string, TransactionsArray>(
